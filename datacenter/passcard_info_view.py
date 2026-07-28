@@ -3,8 +3,11 @@ from datacenter.models import Visit
 from django.shortcuts import render, get_object_or_404
 
 
+SECONDS_IN_HOUR = 3600
+
+
 def is_visit_strange(visit):
-    more_than_hour = visit.get_duration() > 3600
+    more_than_hour = visit.get_duration() > SECONDS_IN_HOUR
     return more_than_hour
 
 
